@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
 
 
-  devise_for :users
   root 'welcome#index'
+
+
+
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
+  post '/signout' => 'sessions#destroy'
+  
+  resources :users
 
 end
