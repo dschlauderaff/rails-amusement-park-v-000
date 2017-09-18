@@ -1,2 +1,5 @@
 <h1>Edit Attraction</h1>
-<%= render 'form', attraction: @attraction %>
+
+<%= form_for @attraction do |f| %>
+  <%= render :partial => 'form', :locals => {:f => f} %>
+<% end %>
