@@ -1,1 +1,3 @@
+<%= link_to "New Attraction", new_attraction_path if admin? %>
+
 <%= render :partial => "attraction", :collection => @attractions %>
