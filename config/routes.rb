@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+ 
+
   root 'welcome#index'
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
@@ -7,6 +10,9 @@ Rails.application.routes.draw do
   delete '/signout' => 'sessions#destroy'
 
   resources :sessions, only: [:new, :create]
-  resources :users
+  resources :users, 
+            :attractions do
+              resources :rides, only: [:new, :create]
+            end
   
 end
